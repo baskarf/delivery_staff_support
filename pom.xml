@@ -70,6 +70,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+          <appName>spring-boot-web-jsp</appName>
+          <includeTarget>false</includeTarget>
+          <includes>
+              <include>${basedir}/${full-artifact-name}</include>
+          </includes>
+          <jdkVersion>1.8</jdkVersion>
+          <processTypes>
+              <web>java $JAVA_OPTS -jar ${full-artifact-name}</web>
+          </processTypes>
+      </configuration>
 			</plugin>
 		</plugins>
 	</build>
